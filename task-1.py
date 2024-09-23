@@ -27,3 +27,22 @@ def romanToInt(s: str) -> int:
         prev_value = current_value
 
     return total
+
+def convert_roman_numbers():
+    while True:
+        roman_input = input("Enter a Roman numeral (or 'q' to quit): ").upper()
+
+        # Exit the loop if the user wants to quit
+        if roman_input == 'Q':
+            print("Exiting the program.")
+            break
+
+        # Validate if the input is a valid Roman numeral
+        if all(char in 'IVXLCDM' for char in roman_input):
+            result = romanToInt(roman_input)
+            print(f"The integer value of {roman_input} is {result}.")
+        else:
+            print("Invalid Roman numeral. Please try again.")
+
+# Call the function to start converting numbers
+convert_roman_numbers()
